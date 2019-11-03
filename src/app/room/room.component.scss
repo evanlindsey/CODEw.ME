@@ -1,0 +1,39 @@
+.col-sm-6 {
+  border-bottom: 2vh solid transparent;
+}
+
+.editor {
+  width: 100%;
+  height: 50vh;
+  min-height: 300px;
+}
+
+.console {
+  width: 100%;
+  min-height: 30px;
+  text-align: left;
+  border-radius: 5px;
+  background-color: #000000;
+  padding: 5px 10px 5px 10px;
+}
+
+.entry {
+  display: block;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.entry.log {
+  color: #00ff00;
+}
+
+.entry.err {
+  color: #ff0000;
+}
+
+@media (min-width: 576px) {
+  #my-theme {
+    margin-top: -85px;
+  }
+}
