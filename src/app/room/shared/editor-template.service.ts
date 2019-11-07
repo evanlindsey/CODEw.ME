@@ -27,6 +27,9 @@ export class EditorTemplateService {
           <style>
             ${cssCode}
           </style>
+        </head>
+        <body>
+          ${htmlCode}
           <script>
             try {
               console.log = (msg) => {
@@ -37,9 +40,6 @@ export class EditorTemplateService {
               window.parent.postMessage('ERROR: ' + err.message, '*');
             }
           </script>
-        </head>
-        <body>
-          ${htmlCode}
         </body>
       </html>
     `;
