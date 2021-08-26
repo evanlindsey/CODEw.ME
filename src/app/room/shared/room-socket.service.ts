@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment as env } from '../../../environments/environment';
 import { Subject } from 'rxjs';
 
-import io from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 import { ModalService } from '../../shared/modal.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -24,7 +24,7 @@ export interface Repo {
 @Injectable()
 export class RoomSocketService {
 
-  private socket: io;
+  private socket: Socket;
   private socketUrl = '';
   private token = '';
 
@@ -60,7 +60,7 @@ export class RoomSocketService {
     this.token = this.cookie.get('token');
 
     this.spinner.show();
-    this.socket = io.connect(this.socketUrl);
+    this.socket = io(this.socketUrl);
     this.socket.on('connect', () => {
       this.spinner.hide();
       this.connected$.next(true);
